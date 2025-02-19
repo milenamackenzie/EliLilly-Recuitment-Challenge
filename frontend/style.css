@@ -1,32 +1,95 @@
-/* ---- Global styles ---- */
-
-/* CSS Reset */
-* {
-    box-sizing: border-box;
-}
-
-/* Body styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
+/* ---- Updated Styles ---- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    color: #333;
-    padding-top: 30px;
 }
 
-/* Disclaimer styles. DO NOT REMOVE OR EDIT UNLESS ABSOLUTELY NECESSARY */
-.disclaimer {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 0.5rem;
-    z-index: 1000;
-    font-weight: bold;
-    height: 30px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* ---- Your custom styles below ---- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+    color: #d43d5b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#medicine-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.medicine-card {
+    background: #fff5f7;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.medicine-card:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+input {
+    border: 2px solid #ff4f70;
+    outline: none;
+}
+
+button {
+    background: #ff4f70;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d43d5b;
+}
+
+#response-message {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}

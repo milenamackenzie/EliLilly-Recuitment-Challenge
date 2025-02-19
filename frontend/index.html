@@ -1,21 +1,37 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Medicine Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="disclaimer" id="disclaimer">
-        Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).
-    </div>
-    <header>
-        <h1>Medicine Tracker</h1>
-    </header>
-    <main>
+    <div class="container">
+        <header>
+            <h1>Medicine Tracker</h1>
+        </header>
+        
+        <main>
+            <!-- Medicine List -->
+            <section id="medicines-list">
+                <h2>Available Medicines</h2>
+                <div id="medicine-container"></div>
+            </section>
 
-    </main>
+            <!-- Form to Add Medicine -->
+            <section id="medicine-form">
+                <h2>Add Medicine</h2>
+                <form id="add-medicine-form">
+                    <input type="text" id="name" placeholder="Medicine Name" required>
+                    <input type="number" id="price" placeholder="Price" required>
+                    <button type="submit">Add Medicine</button>
+                </form>
+                <p id="response-message"></p>
+            </section>
+        </main>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
