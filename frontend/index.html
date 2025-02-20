@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,28 +8,24 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Medicine Tracker</h1>
-        </header>
+        <h1>Medicine Tracker</h1>
         
-        <main>
-            <!-- Medicine List -->
-            <section id="medicines-list">
-                <h2>Available Medicines</h2>
-                <div id="medicine-container"></div>
-            </section>
+        <!-- Medicine List -->
+        <div id="medicines-list">
+            <h2>Available Medicines</h2>
+            <div id="medicine-container"></div>
+        </div>
 
-            <!-- Form to Add Medicine -->
-            <section id="medicine-form">
-                <h2>Add Medicine</h2>
-                <form id="add-medicine-form">
-                    <input type="text" id="name" placeholder="Medicine Name" required>
-                    <input type="number" id="price" placeholder="Price" required>
-                    <button type="submit">Add Medicine</button>
-                </form>
-                <p id="response-message"></p>
-            </section>
-        </main>
+        <!-- Form to Add Medicine -->
+        <div id="medicine-form">
+            <h2>Add Medicine</h2>
+            <form id="add-medicine-form">
+                <input type="text" id="name" placeholder="Medicine Name" required>
+                <input type="number" id="price" placeholder="Price" required>
+                <button type="submit">Add Medicine</button>
+            </form>
+            <p id="response-message"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
