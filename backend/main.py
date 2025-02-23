@@ -58,7 +58,7 @@ def get_single_med(name: str):
         for med in data["medicines"]:
             print(med)
             if med['name'] == name:
-                return med
+                 return med
     return {"error": "Medicine not found"}
 
 @app.post("/create")
