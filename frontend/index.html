@@ -7,30 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="logo">
-        <img src= "eli-lilly-logo.png" alt="Eli-Lilly Logo">
-    </div>
-
+    <div class="disclaimer">Disclaimer: All medicine names and prices used in this application are fictional and do not represent any real medicine(s).</div>
+    <div class="logo" id="logo">
+        <img src="eli-lilly-logo.png" alt="logo">
+      </div>
     <div class="container">
-        <h1>Medicine Tracker</h1>
+        <header>
+            <h1>Medicine Tracker</h1>
+        </header>
         
-        <!-- Medicine List -->
-        <div id="medicines-list">
-            <h2>Available Medicines</h2>
-            <div id="medicine-container"></div>
-        </div>
+        <main>
+            <!-- Medicine List -->
+            <section id="medicines-list">
+                <h2>Available Medicines</h2>
+                <div id="medicine-container"></div>
+            </section>
 
-        <!-- Form to Add Medicine -->
-        <div id="medicine-form">
-            <h2>Add Medicine</h2>
-            <form id="add-medicine-form">
-                <input type="text" id="name" placeholder="Medicine Name" required>
-                <input type="number" id="price" placeholder="Price" required>
-                <button type="submit">Add Medicine</button>
-            </form>
-            <p id="response-message"></p>
-        </div>
+            <!-- Form to Add Medicine -->
+            <section id="medicine-form">
+                <h2>Add Medicine</h2>
+                <form id="add-medicine-form">
+                    <input type="text" id="name" placeholder="Medicine Name" required>
+                    <input type="number" id="price" placeholder="Price" step="0.01" required>
+                    <button type="submit">Add Medicine</button>
+                </form>
+                <p id="response-message"></p>
+            </section>
+        </main>
     </div>
 
     <script src="script.js"></script>
