@@ -77,13 +77,66 @@ async function fetchMedicines() {
             card.innerHTML = `
                 <p><strong>${med.name || "Unknown"}</strong></p>
                 <p>Price: $${med.price ?? "N/A"}</p>
+                <button class="edit-btn" onclick="updateMedicine('${med.name}')">Edit</button>
+                <button class="delete-btn" onclick="deleteMedicine('${med.name}')">Delete</button>
             `;
             container.appendChild(card);
         });
+
     } catch (error) {
         showOfflineMessage(); // Handle API failure
     }
 }
+
+/**
+ * Delete a medicine from the database.
+ */
+async function deleteMedicine(name) {
+    if (!confirm(`Are you sure you want to delete ${name}?`)) return;
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/delete`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ name })
+        });
+
+        const data = await response.json();
+        showMessage(data.message, "success");
+        fetchMedicines();
+    } catch (error) {
+        showMessage("Error deleting medicine", "error");
+    }
+}
+
+/**
+ * Update the price of a medicine.
+ */
+async function updateMedicine(name) {
+    let newPrice = prompt(`Enter new price for ${name}:`);
+    if (!newPrice) return;
+
+    newPrice = parseFloat(newPrice);
+    if (isNaN(newPrice) || newPrice < 0) {
+        alert("Invalid price. Please enter a valid number.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/update`, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ name, price: newPrice.toFixed(2) })
+        });
+
+        const data = await response.json();
+        showMessage(data.message, "success");
+        fetchMedicines();
+    } catch (error) {
+        showMessage("Error updating medicine", "error");
+    }
+}
+
 
 /**
  * Display a user message on the screen.

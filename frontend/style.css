@@ -31,10 +31,11 @@ body {
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #ffffff, #bd0b11);
+    background-attachment: fixed; /* Keeps gradient smooth when scrolling */
+    min-height: 100vh; /* Ensures gradient covers full page */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
